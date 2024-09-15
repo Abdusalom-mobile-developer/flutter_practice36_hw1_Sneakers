@@ -23,7 +23,7 @@ class _ProductScreenState extends State<ProductScreen> with Variables {
         appBar: AppBar(
           backgroundColor: ColorsClass.white,
           toolbarHeight: 75,
-          title: const Text("Shoes",
+          title: const Text("Sneakers",
               style: TextStyle(
                   fontSize: 47,
                   color: ColorsClass.purple,
