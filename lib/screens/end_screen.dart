@@ -18,7 +18,7 @@ class _EndScreenState extends State<EndScreen> with Variables {
     return Scaffold(
       body: Container(
           alignment: Alignment.center,
-          padding: EdgeInsets.symmetric(horizontal: 30, vertical: 50),
+          padding: const EdgeInsets.symmetric(horizontal: 30, vertical: 50),
           color: ColorsClass.white,
           width: double.infinity,
           child: Stack(
@@ -37,7 +37,7 @@ class _EndScreenState extends State<EndScreen> with Variables {
                         child: Icon(Icons.check_rounded,
                             color: ColorsClass.purple,
                             size: MediaQuery.of(context).size.width / 3)),
-                    SizedBox(
+                    const SizedBox(
                       height: 6,
                     ),
                     Text("Success",
@@ -63,16 +63,16 @@ class _EndScreenState extends State<EndScreen> with Variables {
                     ),
                     child: TextButton(
                       onPressed: () {
-                        Navigator.pushReplacementNamed(
-                            context, ProductScreen.id);
                         for (int i = 0;
                             i < CartScreen.listOfProductsInCart.length;
                             i++) {
                           CartScreen.listOfProductsInCart.removeAt(i);
                           i--;
                         }
+                         Navigator.pushNamedAndRemoveUntil(
+                            context, ProductScreen.id, (route) => false);
                       },
-                      child: Text("Main Screen",
+                      child: const Text("Main Screen",
                           style: TextStyle(
                               fontSize: 23,
                               color: ColorsClass.purple,
